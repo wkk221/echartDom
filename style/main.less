@@ -26,10 +26,196 @@ body {
   text-align: center;
   .grid-colum {
     flex: 3;
-    background: green;
     &:nth-child(2){
       flex: 5;
-      background: #000000;
+      margin: 0 .125rem .1875rem;
+      // outline: solid 1px #ffffff;
     }
+  }
+}
+.panel{
+  position: relative;
+  height: 3.875rem;
+  margin-bottom: .1875rem;
+  // outline: 1px #ffffff solid;
+  background:rgba(255, 255, 255, 0.1) url('../images/line.png');
+  padding: 0 .1875rem .5rem;
+  // 34, 149, 173
+  .panel__hd{
+    height: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    font-size: .25rem;
+  }
+  .panel__bd{
+    height: 3rem;
+    background: #f1f1f1;
+  }
+  // 修饰
+  &::before{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: solid 2px rgb(34, 149, 173);
+    border-left: solid 2px rgb(34, 149, 173);
+    left: 0;
+    top: 0;
+  }
+  &::after{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: solid 2px rgb(34, 149, 173);
+    border-right: solid 2px rgb(34, 149, 173);
+    right: 0;
+    top: 0;
+  }
+  .panel__ft{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-bottom: solid 2px rgb(34, 149, 173);
+      border-left: solid 2px rgb(34, 149, 173);
+      left: 0;
+      bottom: 0;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-bottom: solid 2px rgb(34, 149, 173);
+      border-right: solid 2px rgb(34, 149, 173);
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.no{
+  // background: blue;
+  padding: .1875rem;
+  background: rgba(255, 255, 255, 0.1);
+  .no_bd,.no_hd {
+    ul {
+      list-style: none;
+      display: flex;
+      li{
+        // font-size: .5rem;
+        flex: 1;
+      }
+    }
+  }
+  .no_hd{
+    position: relative;
+    line-height: 1rem;
+    border: 1px solid #8080802e;
+    li{
+      font-family: nb;
+      font-size: .875rem;
+      &:nth-child(1) {
+        position: relative;
+        &::after{
+          content: '';
+          position:absolute;
+          height: 50%;
+          width: .0125rem;
+          background: #8080802e;
+          top: 25%;
+          right: 0;
+        }
+      }
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 10px;
+      border-top: solid 2px rgb(34, 149, 173);
+      border-left: solid 2px rgb(34, 149, 173);
+      left: 0;
+      top: 0;
+    }
+    &::before{
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 10px;
+      border-bottom: solid 2px rgb(34, 149, 173);
+      border-right: solid 2px rgb(34, 149, 173);
+      bottom: 0;
+      right: 0;
+    }
+  }
+  .no_bd{
+    padding-top: .125rem;
+    font-size: .225rem;
+    line-height: .5rem;
+  }
+}
+.map {
+  position: relative;
+  height: 10.125rem;
+  overflow: hidden;
+  .map__bg1,.map__bg2,.map__bg3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-size: cover;
+  }
+  .map__bg1{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 6.475rem;
+    height: 6.475rem;
+    background: url('../images/map.png') no-repeat 50% 50%;
+    background-size: cover;
+  }
+  .map__bg2{
+    height: 8.0375rem;
+    width: 8.0375rem;
+    animation: xz01 linear 5s infinite reverse;
+    background: url('../images/jt.png') no-repeat 50% 50% ;
+    background-size: cover;
+    opacity: .6;
+  }
+  .map__bg3{
+    height: 7.075rem;
+    width: 7.075rem;
+    animation: xz01 linear 8s infinite;
+    background: url('../images/lbx.png') no-repeat 50% 50% ;
+    background-size: cover;
+    opacity: .4;
+  }
+  .map__bd{}
+  .chart {
+    outline: solid 1px #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+}
+
+@font-face {
+  font-family: nb;
+  src: url('../font/DS-DIGIT.TTF');
+}
+@keyframes xz01 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
