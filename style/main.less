@@ -1,0 +1,35 @@
+body {
+  background: url('../images/bg.jpg') 50% no-repeat;
+}
+.chartGrid {
+  .chartGrid__hd {
+    height: 1.25rem;
+    background: url('../images/head_bg.png') 50% 0;
+    background-size: 100% 100%;
+    h1 {
+      line-height: 1rem;
+      font-size: .475rem;
+      text-align: center;
+      color: #ffffff
+    }
+  }
+  .chartGrid__main {
+    min-width: 1024px;
+    max-width: 1920px;
+    padding: .125rem .125rem 0;
+    outline: solid 1px red;
+    display: flex;
+    color: #fff;
+  }
+}
+.grid-row{
+  text-align: center;
+  .grid-colum {
+    flex: 3;
+    background: green;
+    &:nth-child(2){
+      flex: 5;
+      background: #000000;
+    }
+  }
+}
