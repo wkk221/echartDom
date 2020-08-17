@@ -45,7 +45,6 @@ body {
 }
 .panel .panel__bd {
   height: 3rem;
-  background: #f1f1f1;
 }
 .panel::before {
   position: absolute;
@@ -209,4 +208,7 @@ body {
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+.bg1 {
+  background: #ffff;
 }
