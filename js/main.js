@@ -378,3 +378,131 @@ Mock.mock(baseURL + '/abc', {
 // $http.get('/abc').then(function (res) {
 //   console.log(res)
 // })
+
+// 饼状图1
+(function(){
+  var myChart = echarts.init(document.querySelector('.pie1 .chart'))
+  var ajaxData =  [
+    [Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data, Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data],
+    [Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data, Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data]
+  ]
+  var option = {
+    color:[
+      'rgba(29, 82, 176,1)',
+      'rgba(25, 99, 172,1)',
+      'rgba(29, 116, 170,1)',
+      'rgba(27, 135, 175,1)',
+      'rgba(35, 143, 175,1)'
+    ],
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+    },
+    legend: {
+        bottom: '0%',
+        itemWidth: 10,
+        itemHeight: 10,
+        textStyle: {
+          color: 'rgba(255,255,255,.5)',
+          fontSize: 12
+        }
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: ['40%', '60%'],
+            avoidLabelOverlap: false,
+            //labelLine: {show: true},
+            label: {
+                show: false,
+                position: 'center'
+            },
+            labelLine: {
+                show: false
+            },
+            data: [
+                {value: 1, name: '0岁以下'},
+                {value: 4, name: '20-29岁'},
+                {value: 2, name: '30-39岁'},
+                {value: 2, name: '40-49岁'},
+                {value: 1, name: '50岁以上'}
+            ]
+        }
+    ]
+};
+
+  myChart.setOption(option)
+  // 浏览器发生调整
+  window.addEventListener('resize', function () {
+    myChart.resize()
+  })
+})();
+
+// 饼状图1
+(function(){
+  var myChart = echarts.init(document.querySelector('.pie2 .chart'))
+  // var ajaxData =  [
+  //   [Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data, Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data],
+  //   [Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data, Mock.mock({'data|30':[/^[1-2]\d{0,1}/]}).data]
+  // ]
+  var option = {
+    color:[
+      'rgba(62, 93, 252,1)',
+      'rgba(100, 190, 165,1)',
+      'rgba(238, 145, 136,1)',
+      'rgba(253, 167, 130,1)',
+      'rgba(68, 134, 253,1)',
+      'rgba(165, 216, 186,1)',
+      'rgba(78, 181, 235,1)',
+      'rgba(70, 143, 253,1)'
+    ],
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+    },
+    legend: {
+        bottom: '0%',
+        itemWidth: 10,
+        itemHeight: 10,
+        textStyle: {
+          color: 'rgba(255,255,255,.5)',
+          fontSize: 12
+        }
+    },
+    series: [
+        {
+            name: '地区分布',
+            type: 'pie',
+            radius: ['10%', '70%'],
+            roseType: 'radius',
+            avoidLabelOverlap: false,
+            labelLine: {
+              show: true,
+              length: 6,
+              length2: 8,
+              smooth: true
+            },
+            label: {
+                show: true,
+            },
+            data: [
+                {value: 1, name: '云南'},
+                {value: 4, name: '北京'},
+                {value: 2, name: '山东'},
+                {value: 2, name: '河北'},
+                {value: 1, name: '江苏'},
+                {value: 1, name: '浙江'},
+                {value: 1, name: '深圳'},
+                {value: 1, name: '广东'}
+            ]
+        }
+    ]
+};
+
+  myChart.setOption(option)
+  // 浏览器发生调整
+  window.addEventListener('resize', function () {
+    myChart.resize()
+  })
+})();
