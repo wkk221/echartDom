@@ -43,6 +43,11 @@ body {
   text-align: center;
   font-size: 0.25rem;
 }
+.panel .panel__hd a {
+  text-decoration-line: none;
+  margin-left: 5px;
+  color: #fff;
+}
 .panel .panel__bd {
   height: 3rem;
 }
